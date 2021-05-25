@@ -1,7 +1,6 @@
 import React from "react";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import style from "styled-components";
 import "./App.css";
 import Header from './components/Header'
 import Media from './components/Media'
@@ -33,6 +32,7 @@ function App() {
     <div className="App">
       <Header />
       <Media mediaType={mediaType} nasaMedia={nasaMedia} />
+      <Content title={nasaTitle} date={nasaDate} info={nasaInfo} />
     </div>
   );
 }
