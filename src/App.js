@@ -14,12 +14,25 @@ function App() {
   const [nasaDate, setNasaDate] = useState()
   const [nasaInfo, setNasaInfo] = useState()
 
+  useEffect(() => {
+    axios.get("https://api.nasa.gov/planetary/apod?api_key=k9uiqyXabCjeeS16YCPHBE9RrLlKydWwA3f05vBY")
+      .then(result => {
+        setMediaType(result.data.media_type)
+        setNasaMedia(result.data.hdurl)
+        setNasaTitle(result.data.title)
+        setNasaDate(result.data.date)
+        setNasaInfo(result.data.explanation)
+      })
+
+      .catch(error => {
+        console.log(error)
+      })
+  }, [])
+
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <Header />
+      <Media mediaType={mediaType} nasaMedia={nasaMedia} />
     </div>
   );
 }
