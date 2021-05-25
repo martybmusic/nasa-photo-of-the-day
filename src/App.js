@@ -8,6 +8,12 @@ import Media from './components/Media'
 import Content from './components/Content'
 
 function App() {
+  const [mediaType, setMediaType] = useState()
+  const [nasaMedia, setNasaMedia] = useState()
+  const [nasaTitle, setNasaTitle] = useState()
+  const [nasaDate, setNasaDate] = useState()
+  const [nasaInfo, setNasaInfo] = useState()
+
   return (
     <div className="App">
       <p>

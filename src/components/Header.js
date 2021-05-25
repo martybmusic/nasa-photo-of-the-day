@@ -1,5 +1,4 @@
 import React from 'react';
-import style from 'styled-components';
 
 const Header = (props) => {
     return (
