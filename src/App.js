@@ -1,13 +1,11 @@
-import React from "react";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react'
 import "./App.css";
+import axios from 'axios';
 import Header from './components/Header'
 import Media from './components/Media'
 import Content from './components/Content'
 
 function App() {
-  const [mediaType, setMediaType] = useState()
   const [nasaMedia, setNasaMedia] = useState()
   const [nasaTitle, setNasaTitle] = useState()
   const [nasaDate, setNasaDate] = useState()
@@ -16,7 +14,6 @@ function App() {
   useEffect(() => {
     axios.get("https://api.nasa.gov/planetary/apod?api_key=k9uiqyXabCjeeS16YCPHBE9RrLlKydWwA3f05vBY")
       .then(result => {
-        setMediaType(result.data.media_type)
         setNasaMedia(result.data.hdurl)
         setNasaTitle(result.data.title)
         setNasaDate(result.data.date)
@@ -30,8 +27,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Media mediaType={mediaType} nasaMedia={nasaMedia} />
+      <div className="App-header"><Header /></div>
+      
+      <Media nasaMedia={nasaMedia} />
       <Content title={nasaTitle} date={nasaDate} info={nasaInfo} />
     </div>
   );

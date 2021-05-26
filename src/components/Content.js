@@ -5,8 +5,8 @@ const Content = (props) => {
 
     return (
         <container>
-            <h2>Title: <span>{title}</span></h2>
-            <h3>Date: <span>{date}</span></h3>
+            <h2>{title}</h2>
+            <h3>{date}</h3>
             <p>{info}</p>
         </container>
     )

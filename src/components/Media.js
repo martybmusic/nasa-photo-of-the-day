@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Media = (props) => {
-    const { nasaMedia, mediaType } = props;
+    const { nasaMedia } = props;
 
     return (
         <div>

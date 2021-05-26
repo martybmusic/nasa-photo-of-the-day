@@ -1,9 +1,13 @@
 import React from 'react';
+import logoImg from "../Nasa_Logo.jpeg";
 
 const Header = (props) => {
     return (
-        <div className='App-header'>
-            <h1>NASA media of the day</h1>
+        <div>
+            <img className = "App-logo" 
+            alt="logo"
+            src={logoImg}/>
+            <h2>Image of the Day</h2>
         </div>
     )
 }
