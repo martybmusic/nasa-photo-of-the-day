@@ -2,9 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 
 const StyledContent = styled.div`
-  width: 80%;
-  display: flex;
-  justify-content: space-evenly;
   color: ${(props) => props.theme.primaryColor};
   &:hover {
     color: ${props => props.theme.secondaryColor};
